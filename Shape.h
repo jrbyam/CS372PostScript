@@ -3,17 +3,18 @@
 
 #include <string>
 using std::string;
+using std::to_string;
 
 class Shape {
 public:
-
-    virtual void draw() = 0;
+    virtual ~Shape() {}
+    virtual string draw() = 0;
     virtual void rotate(int rotation) {
-        this.rotation = rotation;
+        this->rotation = rotation;
     }
     virtual void scale(double scaleX, double scaleY) {
-        this.scaleX = scaleX;
-        this.scaleY = scaleY;
+        this->scaleX = scaleX;
+        this->scaleY = scaleY;
     }
 
     int rotation = 0;

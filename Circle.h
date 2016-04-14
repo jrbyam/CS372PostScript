@@ -4,16 +4,13 @@
 #include "Shape.h"
 
 class Circle : public Shape {
+public:
     Circle(double radius) {
-        this.radius = radius;
+        this->radius = radius;
     }
     string draw() {
-        return ("0 " +   // x position
-                "0 " +   // y postion
-                radius + // Radius length
-                " 0 " +  // Starting angle
-                "360 " + // Ending angle
-                " arc");
+        // Command is <x position> <y postion> <radius length> <starting angle> <ending angle> arc
+        return ("0 0 " + to_string(radius) + " 0 360 arc");
     }
 private:
     double radius = 0;
