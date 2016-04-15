@@ -8,7 +8,7 @@ using std::to_string;
 class Shape {
 public:
     virtual ~Shape() {}
-    virtual string draw() = 0;
+    virtual string draw(int xCoord, int yCoord) = 0;
     virtual void rotate(int rotation) {
         this->rotation = rotation;
     }

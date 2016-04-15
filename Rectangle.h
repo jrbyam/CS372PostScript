@@ -9,11 +9,13 @@ public:
 		this->width = width;
 		this->height = height;
 	}
-	string draw() {
+	string draw(int xCoord, int yCoord) {
 		// Command is <x position> <y postion> <radius length> <starting angle> <ending angle> arc
-		return ("0 0 moveto\n" + to_string(width) + " 0 lineto\n"
-			+ to_string(width) + " " + to_string(height) + " lineto\n"
-			+ "0 " + to_string(height) + " lineto\n" + "closepath\n" + "stroke\n");
+		return (to_string(xCoord - width / 2) + " " + to_string(yCoord - height / 2) 
+                        + " moveto\n" + to_string(width) + " 0 rlineto\n 0 " + to_string(height) 
+                        + " rlineto\n"
+			+ to_string(-width) + " 0 rlineto\n" 
+                        + "closepath\n" + "stroke\n");
 	}
 private:
 	double width = 0;

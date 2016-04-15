@@ -8,9 +8,9 @@ public:
     Circle(double radius) {
         this->radius = radius;
     }
-    string draw() {
+    string draw(int xCoord, int yCoord) {
         // Command is <x position> <y postion> <radius length> <starting angle> <ending angle> arc
-        return ("0 0 " + to_string(radius) + " 0 360 arc stroke\n");
+        return (to_string(xCoord) + " " + to_string(yCoord) + " " + to_string(radius) + " 0 360 arc stroke\n");
     }
 private:
     double radius = 0;
