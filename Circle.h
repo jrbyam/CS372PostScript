@@ -10,7 +10,7 @@ public:
     }
     string draw() {
         // Command is <x position> <y postion> <radius length> <starting angle> <ending angle> arc
-        return ("0 0 " + to_string(radius) + " 0 360 arc");
+        return ("0 0 " + to_string(radius) + " 0 360 arc stroke\n");
     }
 private:
     double radius = 0;
