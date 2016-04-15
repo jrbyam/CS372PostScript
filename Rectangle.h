@@ -3,17 +3,21 @@
 
 #include "Shape.h"
 
-class Circle : public Shape {
+class Rectangle : public Shape {
 public:
-	Circle(double radius) {
-		this->radius = radius;
+	Rectangle(double width, double height) {
+		this->width = width;
+		this->height = height;
 	}
 	string draw() {
 		// Command is <x position> <y postion> <radius length> <starting angle> <ending angle> arc
-		return ("0 0 " + to_string(radius) + " 0 360 arc\n");
+		return ("0 0 moveto\n" + to_string(width) + " 0 lineto\n"
+			+ to_string(width) + " " + to_string(height) + " lineto\n"
+			+ "0 " + to_string(height) + " lineto\n" + "closepath\n" + "stroke\n");
 	}
 private:
-	double radius = 0;
+	double width = 0;
+	double height = 0;
 };
 
 #endif
