@@ -3,7 +3,7 @@
 
 #include "Shape.h"
 #include <math.h>
-#define PI 3.14159265
+#define PI 3.14
 class Polygon : public Shape {
 public:
     Polygon(int sides, double sideLength) {
@@ -12,21 +12,21 @@ public:
     }
 
     string draw(int xCoord, int yCoord) {
-        double apothem = sideLength / (2 * tan(PI / sides));
-        double angle = 180 * (sides - 2);
-        string result = (to_string(xCoord - sideLength / 2) + " " 
-                         + to_string(yCoord - apothem) + " moveto\n"
-                         + to_string(sideLength) + " 0 rlineto\n"
-                         + to_string(sideLength) + " 0 rmoveto\n");
+        string result = "";
+
         for (int i = 0; i < sides; ++i) {
-            result += to_string(angle) + " rotate\n"
-                      + to_string(sideLength) + " 0 rlineto\n"
-                      + to_string(sideLength) + " 0 rmoveto\n";
+            double x = ((sideLength / 2) * ((sin(((2 * i + 1) * PI) / sides)) / (sin(PI / sides)))) + xCoord;
+            double y = ((-sideLength / 2) * ((cos(((2 * i + 1) * PI) / sides)) / (sin(PI / sides)))) + yCoord;
+            if (i == 0) {
+                result += to_string(x) + " " + to_string(y) + " moveto\n";
+            } else {
+                result += to_string(x) + " " + to_string(y) + " lineto\n";
+            }
         }
-        return result + "stroke\n";
+        return result + "closepath\nstroke\n";
     }
 private:
-    int sides = 0;
+    double sides = 0.0;
     double sideLength = 0.0;
 };
 
