@@ -33,8 +33,8 @@ public:
         result += to_string(scaleX) + " " + to_string(scaleY) + " scale\n";
 
         for (int i = 0; i < sides; ++i) {
-            double x = ((sideLength / 2) * ((sin(((2 * i + 1) * PI) / sides)) / (sin(PI / sides)))) + xCoord;
-            double y = ((-sideLength / 2) * ((cos(((2 * i + 1) * PI) / sides)) / (sin(PI / sides)))) + yCoord;
+            double x = ((sideLength / 2) * ((sin(((2 * i + 1) * PI) / sides)) / (sin(PI / sides))));
+            double y = ((-sideLength / 2) * ((cos(((2 * i + 1) * PI) / sides)) / (sin(PI / sides))));
             if (i == 0) {
                 result += to_string(x) + " " + to_string(y) + " moveto\n";
             } else {
