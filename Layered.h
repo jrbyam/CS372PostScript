@@ -22,9 +22,16 @@ public:
         boundW = largestBoundW;     
     }
     string draw(int xCoord, int yCoord) {
-        string result = "";
+        string result = "gsave\n" + to_string(xCoord) + " " + to_string(yCoord) + " translate\n";
+
+        // Handle rotation
+        result += to_string(rotation) + " rotate\n";
+
+        // Handle scale
+        result += to_string(scaleX) + " " + to_string(scaleY) + " scale\n";
+        
         for (auto child : children) {
-            result += child->draw(xCoord, yCoord);
+            result += child->draw(0, 0);
         }
         return result;
     }

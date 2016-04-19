@@ -28,6 +28,8 @@ int main() {
         Square fourthThing(75);
         Triangle fifth(200);
         Layered sixth({&newThing, &secondThing, &thirdThing, &fourthThing, &fifth});
+        sixth.scale(.5, .5);
+        sixth.rotate(90);
         Vertical seventh({&newThing, &secondThing, &thirdThing});
         seventh.scale(2, 2);
         seventh.rotate(1080);
@@ -38,8 +40,8 @@ int main() {
 	//cout << thirdThing.draw(300, 300);
         //cout << fourthThing.draw(100, 100);
         //cout << fifth.draw(400, 400);
-        //cout << sixth.draw(400, 500);
-        cout << seventh.draw(300, 300);
+        cout << sixth.draw(300, 300);
+        //cout << seventh.draw(300, 300);
         //cout << eighth.draw(300, 300);
         return 0;
 };
