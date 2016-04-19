@@ -7,6 +7,8 @@ class Smiley : public Shape {
 public:
     Smiley(double radius) {
         this->radius = radius;
+        boundW = 2 * radius;
+        boundH = 2 * radius;
     }
 
     string draw(int xCoord, int yCoord) {
