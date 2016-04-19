@@ -28,9 +28,9 @@ public:
         // Handle scale
         result += to_string(scaleX) + " " + to_string(scaleY) + " scale\n";
 
-        double leftBound = xCoord - (boundW / 2);
+        double leftBound = -(boundW / 2) * (1 / scaleX);
         for (auto child : children) {
-            result += child->draw(leftBound + (child->boundW / 2), yCoord);
+            result += child->draw(leftBound + (child->boundW / 2), 0);
             leftBound += child->boundW;
         }
         return result + "grestore\n";

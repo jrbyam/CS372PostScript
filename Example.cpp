@@ -34,14 +34,16 @@ int main() {
         seventh.scale(2, 2);
         seventh.rotate(1080);
         Horizontal eighth({&newThing, &firstThing});
+        eighth.scale(.5, .5);
+        eighth.rotate(-90);
         //cout << newThing.draw(300, 300);
         cout << firstThing.draw(300, 300);
 	//cout << secondThing.draw(200, 300);
 	//cout << thirdThing.draw(300, 300);
         //cout << fourthThing.draw(100, 100);
         //cout << fifth.draw(400, 400);
-        cout << sixth.draw(300, 300);
+        //cout << sixth.draw(300, 300);
         //cout << seventh.draw(300, 300);
-        //cout << eighth.draw(300, 300);
+        cout << eighth.draw(300, 300);
         return 0;
 };
