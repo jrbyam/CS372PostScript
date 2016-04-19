@@ -10,13 +10,14 @@
 #include "Layered.h"
 #include "Vertical.h"
 #include "Horizontal.h"
+#include "Smiley.h"
 #include <iostream>
 using std::cout;
 using std::endl;
 
 int main() {
-        Circle firstThing = Circle(72);
-	Circle newThing = Circle(72);
+        Circle firstThing(72);
+	Circle newThing(72);
         newThing.scale(2, 1);
         newThing.rotate(90);
 	Rectangle secondThing(100, 200);
@@ -38,6 +39,7 @@ int main() {
         eighth.rotate(-90);
         Horizontal ninth({&seventh, &eighth});
         Layered tenth({&firstThing, &newThing, &secondThing, &thirdThing, &fourthThing, &fifth, &sixth, &seventh, &eighth, &ninth});
+        Smiley eleventh(50);
         //cout << newThing.draw(300, 300);
         //cout << firstThing.draw(300, 300);
 	//cout << secondThing.draw(200, 300);
@@ -48,6 +50,7 @@ int main() {
         //cout << seventh.draw(300, 300);
         //cout << eighth.draw(300, 300);
         //cout << ninth.draw(300, 300);
-        cout << tenth.draw(300, 300);
+        //cout << tenth.draw(300, 300);
+        cout << eleventh.draw(300, 300);
         return 0;
 };
