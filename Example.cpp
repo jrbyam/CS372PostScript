@@ -11,6 +11,7 @@
 #include "Vertical.h"
 #include "Horizontal.h"
 #include "Smiley.h"
+#include "Trapezoid.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -44,6 +45,9 @@ int main() {
         eleventh.scale(100, 100);
         Horizontal twelvth({ &firstThing, &secondThing, &eleventh });
         twelvth.scale(-1, 1);
+        Trapezoid thirteenth(75, 50, 50);
+        thirteenth.scale(4, 2);
+        thirteenth.rotate(180);
         //cout << newThing.draw(300, 300);
         //cout << firstThing.draw(300, 300);
 	//cout << secondThing.draw(200, 300);
@@ -55,7 +59,8 @@ int main() {
         //cout << eighth.draw(300, 300);
         //cout << ninth.draw(300, 300);
         //cout << tenth.draw(300, 300);
-        cout << eleventh.draw(300, 300);
+        //cout << eleventh.draw(300, 300);
         //cout << twelvth.draw(300, 300);
+        cout << thirteenth.draw(300, 300);
         return 0;
 };

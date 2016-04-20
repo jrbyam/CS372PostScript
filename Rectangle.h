@@ -20,7 +20,7 @@ public:
                 // Handle scale
                 result += to_string(scaleX) + " " + to_string(scaleY) + " scale\n";
 
-		result += to_string(0 - width / 2) + " " + to_string(0 - height / 2) + " moveto\n" +
+		result += to_string(-width / 2) + " " + to_string(-height / 2) + " moveto\n" +
                           to_string(width) + " 0 rlineto\n 0 " + to_string(height) 
                         + " rlineto\n"
 			+ to_string(-width) + " 0 rlineto\n" 
