@@ -40,7 +40,8 @@ int main() {
         Horizontal ninth({&seventh, &eighth});
         Layered tenth({&firstThing, &newThing, &secondThing, &thirdThing, &fourthThing, &fifth, &sixth, &seventh, &eighth, &ninth});
         Smiley eleventh(50);
-        //eleventh.scale(-2, 1);
+        eleventh.rotate(180);
+        eleventh.scale(100, 100);
         Horizontal twelvth({ &firstThing, &secondThing, &eleventh });
         twelvth.scale(-1, 1);
         //cout << newThing.draw(300, 300);
@@ -54,7 +55,7 @@ int main() {
         //cout << eighth.draw(300, 300);
         //cout << ninth.draw(300, 300);
         //cout << tenth.draw(300, 300);
-        //cout << eleventh.draw(300, 300);
-        cout << twelvth.draw(300, 300);
+        cout << eleventh.draw(300, 300);
+        //cout << twelvth.draw(300, 300);
         return 0;
 };
